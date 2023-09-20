@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+
+.content {
+    /* border: solid 2px red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 25px 10px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 7px;
+}
+
+.header{
+    /* border: solid 2px green; */
+    align-self: center;
+    margin: auto;
+}
+
+.error{
+    /* border: solid 2px pink; */
+    color: crimson;
+    background: rgba(255, 138, 138, 0.418);
+    border-radius: 5px;
+    padding: 2px 50px;
+    margin: 2px;
+    align-self: center;
+    font-size: larger;
+    /* display: none; */
+}
+
+input{
+    text-align: center;
+    padding: 6px;
+    font-size:medium;
+}
+
+input:active{
+    border-radius: 0px;
+    background-color: #bcb7b7;
+}   
+
+.password{
+    /* border: solid 2px brown; */
+    display: flex;
+    position: relative;
+}
+
+.password>input{
+    /* border: solid 2px yellow; */
+    width:11cm;
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+
+.password>.eye{
+    position:absolute;
+    left: 92%;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+.name{
+    /* border: solid 2px yellow; */
+    display: flex;
+    gap: 10px;
+}
+
+.item{
+    margin: 1px;
+}
+
+.field{
+    /* border: solid 2px chartreuse; */
+    display: flex;
+    flex-direction: column;
+}
+.line{
+    border-top: 2px dashed rgba(67, 62, 62, 0.266);
+    margin: 5px 0 5px 0;
+}
+.button{
+    margin: 4px 4px 4px 4px;
+    background-color: rgba(0, 0, 0, 0.846);
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.button:hover{
+    color: lightsalmon;
+}
+
+.sign{
+    padding: 5px;
+    text-align: center;
+}
+.sign>a{
+    text-decoration: none;  
+    color: grey;
+}
+
+span>a{
+    text-decoration: none;  
+    color: grey;
+}
+span>a:hover{
+    color: rgb(0, 22, 119);
+    font-weight: bold;
+}

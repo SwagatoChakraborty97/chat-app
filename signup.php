@@ -20,39 +20,25 @@ if ($post){
     // print_r("THIS IS A POST REQUEST");
     // echo "<br>";
     $data = json_decode(file_get_contents("php://input"));
-    // print_r($data);
-    
+    if(isset($_POST['user_image'])){
+        // print_r($_FILES);
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($_FILES["file"]["name"]);
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+            // IMAGE UPLOADED
+            // echo "The file ". htmlspecialchars( basename( $_FILES["file"]["name"])). " has been uploaded.";
+          } else {
+            // echo "IMAGE UPLOAD ERROR";
+        }
+        return;
+    }
+
     $first_name = $data->first_name;
     $last_name = $data->last_name;
     $email = $data->email;
     // $check_pswrd = $data->pswrd;
     $pswrd_1 = password_hash($data->pswrd, PASSWORD_DEFAULT);
     $pswrd_2 = password_hash($data->confirm_pswrd, PASSWORD_DEFAULT);
-    if (property_exists($data,'user_image')) # Since Optional
-    {
-        $image = $data->user_image;
-        print_r($_FILES);
-        print_r(isset($_FILES['user_image']));
-    }
-
-    // echo "<br>";
-    // echo $first_name;
-    // echo "<br>";
-    // echo $last_name;
-    // echo "<br>";
-    // echo $email;
-    // echo "<br>";
-    // echo $pswrd_1;
-    // echo "<br>";
-    // echo $pswrd_2;
-
-    # STORE IMAGE 
-    // echo $data->email;
-    // echo $image;
-    // $file_name = basename($image);
-    // echo $file_name;
-    // $upload_image = 'images/'.$file_name;
-    // move_uploaded_file($image, $upload_image);
 
     # VALIDATE EMAIL
     $email_validated = false;
@@ -152,4 +138,3 @@ elseif (!$post){
         }
     }
 }
-
